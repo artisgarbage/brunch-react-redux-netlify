@@ -31,6 +31,20 @@ const store = createStore(
   applyMiddleware(middleware)
 )
 
+
+if (module.hot) {
+  module.hot.accept('./reducers', () => {
+    store.replaceReducer(require('./reducers').default);
+  });
+  module.hot.accept();
+
+  module.hot.dispose((data) => {
+    data.counter = store.getState();
+    [].slice.apply(document.querySelector('#app').children).forEach(function(c) { c.remove() });
+  });
+}
+
+
 // Now you can dispatch navigation actions from anywhere!
 // store.dispatch(push('/foo'))
 
