@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
+import { Button } from 'react-bootstrap';
 
 
 // Exports
@@ -13,6 +14,7 @@ export default class Home extends React.Component {
           <img src="http://brunch.io/images/logo.png" alt="Brunch" />
         </Link>
         <p>React + Redux + React Router / Redux + Stylus + CSS Modules </p>
+        <Button bsStyle="primary">Primary</Button>
       </div>
     )
   }

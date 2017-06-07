@@ -3,7 +3,12 @@ exports.files = {
   javascripts: {
     joinTo: 'app.js'
   },
-  stylesheets: {joinTo: 'app.css'}
+  stylesheets: {
+    joinTo: {
+      'vendor.css': /^bower_components/,
+      'app.css': /^app/
+    }
+  }
 };
 
 exports.plugins = {

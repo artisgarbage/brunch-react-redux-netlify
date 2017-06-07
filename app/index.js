@@ -31,21 +31,20 @@ const store = createStore(
   applyMiddleware(middleware)
 )
 
-
+// HMR Stuff
 if (module.hot) {
   module.hot.accept('./reducers', () => {
-    store.replaceReducer(require('./reducers').default);
-  });
-  module.hot.accept();
+    store.replaceReducer(require('./reducers').default)
+  })
+  module.hot.accept()
 
   module.hot.dispose((data) => {
     /*data.counter = store.getState();
-    [].slice.apply(document.querySelector('#root').children).forEach(function(c) { c.remove() });*/
-  });
+    [].slice.apply(document.querySelector('#root').children).forEach(function(c) { c.remove() })*/
+  })
 }
 
-
-// Now you can dispatch navigation actions from anywhere!
+// Dispatch navigation actions a la :
 // store.dispatch(push('/foo'))
 
 
