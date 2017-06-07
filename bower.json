@@ -1,0 +1,21 @@
+{
+  "name": "cpb-react-brunch-boilerplate",
+  "description": "CP+B ReactJS, Brunch Boilerplate",
+  "main": "",
+  "authors": [
+    "Your Name"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-css-only": "^3.3.6"
+  }
+}

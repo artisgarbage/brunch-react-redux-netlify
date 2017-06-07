@@ -39,13 +39,16 @@ if (module.hot) {
   module.hot.accept()
 
   module.hot.dispose((data) => {
-    /*data.counter = store.getState();
-    [].slice.apply(document.querySelector('#root').children).forEach(function(c) { c.remove() })*/
+    //data.counter = store.getState();
+    //Pretty cool...
+    [].slice.apply(document.querySelector('#root').children).forEach(function(c) { c.remove() })
   })
+
 }
 
+
 // Dispatch navigation actions a la :
-// store.dispatch(push('/foo'))
+//store.dispatch(push('/about'))
 
 
 const load = () => {
