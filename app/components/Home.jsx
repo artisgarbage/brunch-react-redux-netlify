@@ -14,7 +14,9 @@ export default class Home extends React.Component {
           <img src="http://brunch.io/images/logo.png" alt="Brunch" />
         </Link>
         <p>React + Redux + React Router / Redux + Stylus + CSS Modules </p>
-        <Button bsStyle="primary">Primary</Button>
+        <Link to="/about">
+          <Button bsStyle="primary">About</Button>
+        </Link>
       </div>
     )
   }
