@@ -39,8 +39,8 @@ if (module.hot) {
   module.hot.accept();
 
   module.hot.dispose((data) => {
-    data.counter = store.getState();
-    [].slice.apply(document.querySelector('#app').children).forEach(function(c) { c.remove() });
+    /*data.counter = store.getState();
+    [].slice.apply(document.querySelector('#root').children).forEach(function(c) { c.remove() });*/
   });
 }
 
@@ -48,15 +48,25 @@ if (module.hot) {
 // Now you can dispatch navigation actions from anywhere!
 // store.dispatch(push('/foo'))
 
-ReactDOM.render(
-  <Provider store={store}>
-    { /* ConnectedRouter will use the store from Provider automatically */ }
-    <ConnectedRouter history={history}>
-      <div>
-        <Route exact path="/" component={Home}/>
-        <Route path="/about" component={About}/>
-      </div>
-    </ConnectedRouter>
-  </Provider>,
-  document.getElementById('root')
-)
+
+const load = () => {
+  ReactDOM.render(
+    <Provider store={store}>
+      { /* ConnectedRouter will use the store from Provider automatically */ }
+      <ConnectedRouter history={history}>
+        <div>
+          <Route exact path="/" component={Home}/>
+          <Route path="/about" component={About}/>
+        </div>
+      </ConnectedRouter>
+    </Provider>,
+    document.getElementById('root')
+  )
+};
+
+
+if (document.readyState !== 'complete') {
+  document.addEventListener('DOMContentLoaded', load);
+} else {
+  load();
+}
