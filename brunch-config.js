@@ -19,7 +19,8 @@ exports.plugins = {
 exports.overrides = {
   production: {
     optimize: true,
-    sourceMaps: false
+    sourceMaps: false,
+    plugins: {autoReload: {enabled: false}}
   }
 }
 
